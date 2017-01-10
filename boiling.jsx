@@ -1,3 +1,4 @@
+
 // props are sent (up or down), state is set
 // Two utility functions to conert c->f, and f->c
 function toCelcius(f){
@@ -48,13 +49,12 @@ var TemperatureInput = React.createClass({
 	render:function(){
 		var value = this.props.value;
 		var tUnits = this.props.tUnits;
-		//console.log(value); //<--- that returned 'undefined'? no state right now// now it will return whever we pass into it
-
+		//console.log(value); //<--- that returned 'undefined'?// now it will return whever we pass into it
 		return(
 			<div>
 				<label>Enter temperature in question in {tUnits}</label>
 				<input placeholder="Temp" value={value} onChange={this.handleChange} />
-			</div>
+			</div> 
 		)
 	}
 })
@@ -62,7 +62,7 @@ var TemperatureInput = React.createClass({
 var Calculator = React.createClass({
 	getInitialState: function(){
 		return{
-			value: 0,
+			value: 32,
 			scale:'c'	
 		}
 	},
@@ -99,7 +99,7 @@ var Calculator = React.createClass({
 })
 
 ReactDOM.render(
-	<Calculator />,
+	<Calculator/>,
 	document.getElementById('boiling')
 )
 
